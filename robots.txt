@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lvdemos.github.io/lvgymdemo/sitemap.xml

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Tidal Athletic | Elite Performance Gym in Santa Cruz</title>
+<meta name="description" content="Tidal Athletic is a performance gym in Santa Cruz, CA: strength and conditioning, personal coaching, group classes, recovery suite and nutrition coaching.">
+<link rel="canonical" href="https://lvdemos.github.io/lvgymdemo/">
+<meta name="theme-color" content="#041f2e">
+<link rel="icon" href="./assets/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-bar">
+    <a href="#" class="nav-logo" aria-label="Tidal Gym home">
+      <img src="./assets/images/logo.png" alt="Tidal Gym" class="nav-logo-img">
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#membership">Membership</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li class="nav-menu-only"><button type="button" class="nav-login" data-open-login>Log In</button></li>
+      <li class="nav-menu-only"><a href="#membership" class="nav-cta">Join Now</a></li>
+    </ul>
+    <div class="nav-right">
+      <button type="button" class="nav-login" data-open-login>Log In</button>
+      <a href="#membership" class="nav-cta">Join Now</a>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- LOGIN MODAL -->
+<div class="login-modal" id="login-modal">
+  <div class="login-backdrop" onclick="document.getElementById('login-modal').classList.remove('open')"></div>
+  <div class="login-box">
+    <button class="login-close" onclick="document.getElementById('login-modal').classList.remove('open')">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="login-logo">
+      <img src="./assets/images/logo.png" alt="Tidal Gym" style="height: 55px; filter: brightness(0) invert(1);">
+    </div>
+    <h2 class="login-title">Welcome Back</h2>
+    <p class="login-sub">Sign in to your Tidal account</p>
+    <div class="login-field">
+      <label class="login-label">Email</label>
+      <input type="email" class="login-input" placeholder="you@example.com">
+    </div>
+    <div class="login-field">
+      <label class="login-label">Password</label>
+      <input type="password" class="login-input" placeholder="••••••••">
+    </div>
+    <div class="login-forgot"><a href="#">Forgot password?</a></div>
+    <button class="login-submit">Sign In</button>
+    <p class="login-register">No account? <a href="#">Start your free week</a></p>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div id="hero-shader" aria-hidden="true"></div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">Santa Cruz · Elite Performance</span>
+      <span class="eyebrow-line"></span>
+    </div>
+    <h1 class="hero-headline">
+      <span class="line"><span>Rise With</span></span>
+      <span class="line"><span>The <em class="accent">Tide.</em></span></span>
+    </h1>
+    <p class="hero-sub">Where pressure meets precision. Tidal is built for those who train like the ocean. Relentless, deep, and always moving forward.</p>
+    <div class="hero-actions">
+      <a href="#membership" class="btn-primary">Start Training</a>
+      <a href="#programs" class="btn-ghost">Explore Programs</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-number">12<span>K+</span></div>
+      <div class="stat-label">Members</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">48<span>+</span></div>
+      <div class="stat-label">Programs</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">38<span>°F</span></div>
+      <div class="stat-label">Cold Plunge</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">5<span>AM</span></div>
+      <div class="stat-label">Doors Open</div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="section-manifesto" id="about">
+  <div class="manifesto-inner">
+    <div class="manifesto-left reveal">
+      <div class="manifesto-tag">Our Philosophy</div>
+      <h2 class="manifesto-heading">Built For<br>The <span class="grad-text">Relentless.</span></h2>
+      <div class="manifesto-body">
+        <p>Most gyms are built for the average. Tidal was built for the edge. The people who show up before anyone else and leave when the work is done.</p>
+        <p>Every square foot is engineered for performance. Every program is crafted by athletes. Every environment is designed to strip away everything except what matters.</p>
+        <p>The ocean doesn't wait. Neither should you.</p>
+      </div>
+    </div>
+    <div class="manifesto-right">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-number">01</div>
+        <div class="feature-title">Performance-First Spaces</div>
+        <div class="feature-desc">Equipment sourced for elite results. Environments built to remove every excuse between you and the work.</div>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-number">02</div>
+        <div class="feature-title">Coach-Driven Programs</div>
+        <div class="feature-desc">Every program written by certified coaches with competitive backgrounds. No filler, no fluff.</div>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-number">03</div>
+        <div class="feature-title">Recovery Built In</div>
+        <div class="feature-desc">Cold plunge, sauna, and infrared therapy. Because how you recover is how you perform.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section-services" id="programs">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-tag">What We Offer</div>
+      <h2 class="section-title">Programs</h2>
+    </div>
+    <a href="#" class="section-link">View All Programs →</a>
+  </div>
+
+  <div class="programs-bento">
+    <article class="program program--feature program--photo reveal">
+      <img src="./assets/images/gallery/gallery1.jpg" alt="" loading="lazy">
+      <div class="program-body">
+        <span class="program-tag">Most booked</span>
+        <h3 class="program-name">Strength &amp; Conditioning</h3>
+        <p class="program-desc">Progressive overload programming built around compound movements and sport-specific performance metrics.</p>
+        <div class="program-foot"><span class="program-price">From $89/mo</span><span class="program-arrow" aria-hidden="true">→</span></div>
+      </div>
+    </article>
+
+    <article class="program program--wide program--photo reveal reveal-delay-1">
+      <img src="./assets/images/gallery/gallery4.jpg" alt="" loading="lazy">
+      <div class="program-body">
+        <h3 class="program-name">Personal Coaching</h3>
+        <p class="program-desc">1-on-1 sessions with credentialed coaches. Custom programming, form assessment, and progress tracking.</p>
+        <div class="program-foot"><span class="program-price">From $120/session</span><span class="program-arrow" aria-hidden="true">→</span></div>
+      </div>
+    </article>
+
+    <article class="program program--count reveal reveal-delay-2">
+      <div class="program-body">
+        <div class="program-big">50<span>+</span></div>
+        <h3 class="program-name">Group Classes</h3>
+        <p class="program-desc">HIIT, Olympic lifting and functional fitness, every week.</p>
+        <div class="program-foot"><span class="program-price">Included</span><span class="program-arrow" aria-hidden="true">→</span></div>
+      </div>
+    </article>
+
+    <article class="program program--photo reveal reveal-delay-3">
+      <img src="./assets/images/gallery/gallery3.jpg" alt="" loading="lazy">
+      <div class="program-body">
+        <h3 class="program-name">Recovery Suite</h3>
+        <p class="program-desc">38°F cold plunge, infrared sauna, contrast therapy.</p>
+        <div class="program-foot"><span class="program-price">From $45</span><span class="program-arrow" aria-hidden="true">→</span></div>
+      </div>
+    </article>
+
+    <article class="program program--wide program--split reveal">
+      <div class="program-body">
+        <h3 class="program-name">Performance Testing</h3>
+        <p class="program-desc">VO2 max, body composition, movement screening and power output, retested every quarter.</p>
+        <div class="program-foot"><span class="program-price">From $95/test</span><span class="program-arrow" aria-hidden="true">→</span></div>
+      </div>
+      <div class="program-bars" aria-hidden="true">
+        <span style="--h:38%"></span><span style="--h:52%"></span><span style="--h:47%"></span><span style="--h:66%"></span><span style="--h:74%"></span><span style="--h:92%"></span>
+      </div>
+    </article>
+
+    <article class="program program--wide program--split reveal reveal-delay-1">
+      <div class="program-body">
+        <h3 class="program-name">Nutrition Coaching</h3>
+        <p class="program-desc">Evidence-based planning from registered dietitians: macros, meal timing and supplementation.</p>
+        <div class="program-foot"><span class="program-price">From $75/mo</span><span class="program-arrow" aria-hidden="true">→</span></div>
+      </div>
+      <div class="program-ring" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="48"/><circle class="ring-a" cx="60" cy="60" r="48" pathLength="100"/><circle class="ring-b" cx="60" cy="60" r="36" pathLength="100"/></svg>
+        <span>P · C · F</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- IMAGE STRIP -->
+<section class="section-gallery">
+  <div class="gallery-strip">
+    <div class="gallery-item">
+      <img src="./assets/images/gallery/gallery1.jpg" alt="Training">
+      <div class="gallery-overlay"><span>Strength</span></div>
+    </div>
+    <div class="gallery-item gallery-item--tall">
+      <img src="./assets/images/gallery/gallery2.jpg" alt="Performance">
+      <div class="gallery-overlay"><span>Performance</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="./assets/images/gallery/gallery3.jpg" alt="Recovery">
+      <div class="gallery-overlay"><span>Recovery</span></div>
+    </div>
+    <div class="gallery-item gallery-item--tall">
+      <img src="./assets/images/gallery/gallery4.jpg" alt="Coaching">
+      <div class="gallery-overlay"><span>Coaching</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="./assets/images/gallery/gallery5.jpg" alt="Community">
+      <div class="gallery-overlay"><span>Community</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section class="section-membership" id="membership">
+  <div style="max-width: 1400px; margin: 0 auto;">
+    <div class="reveal">
+      <div class="section-tag">Pricing</div>
+      <h2 class="section-title">Membership</h2>
+    </div>
+
+    <div class="membership-grid">
+      <div class="membership-card reveal">
+        <div class="membership-tier">Tier 01</div>
+        <div class="membership-name">Current</div>
+        <div class="membership-price"><sup>$</sup>89</div>
+        <div class="membership-period">per month, billed monthly</div>
+        <ul class="membership-features">
+          <li>Full gym access</li>
+          <li>Group classes included</li>
+          <li>App + progress tracking</li>
+          <li>Locker room access</li>
+          <li>2 guest passes/month</li>
+        </ul>
+        <a href="#" class="btn-membership">Get Started</a>
+      </div>
+
+      <div class="membership-card featured reveal reveal-delay-1">
+        <div class="membership-tier">Tier 02</div>
+        <div class="membership-name">Depth</div>
+        <div class="membership-price"><sup>$</sup>149</div>
+        <div class="membership-period">per month, billed monthly</div>
+        <ul class="membership-features">
+          <li>Everything in Current</li>
+          <li>Recovery suite access</li>
+          <li>Monthly performance test</li>
+          <li>Priority class booking</li>
+          <li>1 coach check-in/month</li>
+          <li>Nutrition portal access</li>
+        </ul>
+        <a href="#" class="btn-membership">Get Started</a>
+      </div>
+
+      <div class="membership-card reveal reveal-delay-2">
+        <div class="membership-tier">Tier 03</div>
+        <div class="membership-name">Pelagic</div>
+        <div class="membership-price"><sup>$</sup>249</div>
+        <div class="membership-period">per month, billed monthly</div>
+        <ul class="membership-features">
+          <li>Everything in Depth</li>
+          <li>4 personal coaching sessions</li>
+          <li>Custom program design</li>
+          <li>Quarterly body composition scan</li>
+          <li>Unlimited recovery suite</li>
+          <li>Dedicated locker</li>
+          <li>Exclusive athlete events</li>
+        </ul>
+        <a href="#" class="btn-membership">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-cta" id="contact">
+  <div class="cta-inner reveal">
+    <h2 class="cta-headline">The Water<br><span class="grad-text">Doesn't Wait.</span></h2>
+    <p class="cta-sub">Start your first week free. No commitments, no contracts. Just a facility built for people who are serious about results.</p>
+    <a href="#" class="btn-primary btn-large">Claim Free Week</a>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="section-location" id="location">
+  <div class="location-inner reveal">
+    <div class="location-left">
+      <div class="section-tag">Find Us</div>
+      <h2 class="section-title" style="margin-bottom: 2rem;">Where To<br><span class="grad-text">Train</span></h2>
+      <div class="location-detail">
+        <div class="location-label">Address</div>
+        <div class="location-value">4820 Shoreline Blvd<br>Santa Cruz, CA 95060</div>
+      </div>
+      <div class="location-detail">
+        <div class="location-label">Hours</div>
+        <div class="location-value">Mon to Fri &nbsp; 5am to 11pm<br>Sat to Sun &nbsp; 6am to 10pm</div>
+      </div>
+      <div class="location-detail">
+        <div class="location-label">Contact</div>
+        <div class="location-value">hello@tidalathletic.com<br>(831) 400 0249</div>
+      </div>
+      <div class="location-socials">
+        <a href="#" class="loc-social-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @tidalathletic
+        </a>
+        <a href="#" class="loc-social-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 4s-2.7 1.5-4.2 2A5.5 5.5 0 003 9.5v1A13 13 0 012 21s4-1 7-5c0 0-7 0-7-9a9.5 9.5 0 0016.5-6.5"/></svg>
+          @tidalathletic
+        </a>
+        <a href="#" class="loc-social-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          Tidal Athletic
+        </a>
+      </div>
+    </div>
+    <div class="location-map-wrap">
+      <div class="map-overlay-tag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Tidal Athletic
+      </div>
+      <iframe
+        class="location-map"
+        loading="lazy"
+        allowfullscreen
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-122.0697%2C36.9541%2C-121.9897%2C36.9941&layer=mapnik&marker=36.9741%2C-122.0297"
+      ></iframe>
+      <div class="map-coords">36.9741° N, 122.0297° W</div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOATING SOCIAL STRIP -->
+<div class="social-strip">
+  <a href="#" class="social-strip-link" aria-label="Instagram">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+  </a>
+  <a href="#" class="social-strip-link" aria-label="Twitter / X">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 4s-2.7 1.5-4.2 2A5.5 5.5 0 003 9.5v1A13 13 0 012 21s4-1 7-5c0 0-7 0-7-9a9.5 9.5 0 0016.5-6.5"/></svg>
+  </a>
+  <a href="#" class="social-strip-link" aria-label="LinkedIn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+  </a>
+  <a href="#" class="social-strip-link" aria-label="TikTok">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+  </a>
+  <div class="social-strip-line"></div>
+</div>
+
+<!-- FOOTER (rendered by src/components/Footer.jsx) -->
+<div id="footer-root"></div>
+
+<script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

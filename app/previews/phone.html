@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phone Preview</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: #1b1a17;
+    font-family: system-ui, sans-serif;
+    color: #cfc8b8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    gap: 12px;
+  }
+  .bar { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; align-items: center; }
+  button, select {
+    background: #2b2923; color: #f6f2e9; border: 1px solid #444036;
+    border-radius: 999px; padding: 6px 14px; font: inherit; font-size: 13px; cursor: pointer;
+  }
+  button[aria-pressed="true"] { background: #f6f2e9; color: #0a0906; }
+  a { color: #cfc8b8; font-size: 13px; }
+  .stage { flex: 1; width: 100%; display: flex; align-items: center; justify-content: center; min-height: 0; }
+  /* the phone is rendered at its real size, then scaled down to fit the window,
+     so what you see is the full screen, never a cropped one */
+  .phone {
+    border: 12px solid #000;
+    border-radius: 48px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 0 2px #333;
+    background: #000;
+    transform-origin: center;
+    flex: none;
+  }
+  iframe { display: block; border: 0; }
+  .size { font-size: 12px; opacity: 0.7; }
+</style>
+</head>
+<body>
+  <div class="bar" id="bar">
+    <a href="./">&larr; All presets</a>
+    <select id="bg" aria-label="Background"></select>
+    <span id="devices"></span>
+    <button id="rotate" type="button">Rotate</button>
+    <button id="reload" type="button">Reload</button>
+    <span class="size" id="size"></span>
+  </div>
+  <div class="stage" id="stage"><div class="phone" id="phone"><iframe id="frame" title="Site preview"></iframe></div></div>
+<script type="module">
+  // Dev-only: loads the real site at real phone dimensions.
+  import { PRESETS, DEFAULT_BG } from '/src/backgrounds/presetList.js';
+
+  const devices = [
+    ['iPhone 15', 393, 852],
+    ['iPhone SE', 375, 667],
+    ['Pixel 8', 412, 915],
+  ];
+  const params = new URLSearchParams(location.search);
+  let device = Number(params.get('device') || 0);
+  let landscape = params.get('landscape') === '1';
+  let bg = params.get('bg') || DEFAULT_BG;
+
+  const frame = document.getElementById('frame');
+  const phone = document.getElementById('phone');
+  const stage = document.getElementById('stage');
+  const devicesEl = document.getElementById('devices');
+  const select = document.getElementById('bg');
+
+  PRESETS.forEach(({ key, label }) => select.add(new Option(label, key, false, key === bg)));
+  select.onchange = () => { bg = select.value; syncUrl(); load(); };
+
+  devices.forEach(([name], i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = name;
+    b.onclick = () => { device = i; syncUrl(); layout(); load(); };
+    devicesEl.appendChild(b);
+  });
+  document.getElementById('rotate').onclick = () => { landscape = !landscape; syncUrl(); layout(); load(); };
+  document.getElementById('reload').onclick = load;
+
+  function syncUrl() {
+    const p = new URLSearchParams({ bg, device, landscape: landscape ? 1 : 0 });
+    history.replaceState(null, '', '?' + p);
+  }
+
+  function size() {
+    const [, w, h] = devices[device];
+    return landscape ? [h, w] : [w, h];
+  }
+
+  function layout() {
+    const [w, h] = size();
+    frame.width = w;
+    frame.height = h;
+    const bezel = 24;
+    const scale = Math.min(1, (stage.clientWidth - 8) / (w + bezel), (stage.clientHeight - 8) / (h + bezel));
+    phone.style.transform = `scale(${scale})`;
+    // keep layout space equal to the scaled size so nothing overflows
+    phone.style.margin = `${-((h + bezel) * (1 - scale)) / 2}px ${-((w + bezel) * (1 - scale)) / 2}px`;
+    [...devicesEl.children].forEach((b, i) => b.setAttribute('aria-pressed', String(i === device)));
+    document.getElementById('size').textContent = `${w} × ${h}${scale < 1 ? ` · shown at ${Math.round(scale * 100)}%` : ''}`;
+  }
+
+  function load() {
+    frame.src = '/?bg=' + encodeURIComponent(bg);
+  }
+
+  // hide the scrollbar and the dev switcher inside the frame, start at the top
+  frame.addEventListener('load', () => {
+    const doc = frame.contentDocument;
+    const s = doc.createElement('style');
+    s.textContent = 'html{scrollbar-width:none}::-webkit-scrollbar{display:none}.bg-picker{display:none}';
+    doc.head.appendChild(s);
+    // the browser restores the old scroll position after load, so beat it
+    frame.contentWindow.history.scrollRestoration = 'manual';
+    frame.contentWindow.scrollTo({ top: 0, behavior: 'instant' });
+    setTimeout(() => frame.contentWindow.scrollTo({ top: 0, behavior: 'instant' }), 300);
+  });
+
+  window.addEventListener('resize', layout);
+  layout();
+  load();
+</script>
+</body>
+</html>
